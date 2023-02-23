@@ -30,10 +30,6 @@
     "test": "npm run test:lint",
     "test:lint": "eslint --cache --color --ext .jsx,.js src scripts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/openblockcc/openblock-desktop.git"
-  },
   "dependencies": {
     "bytes": "^3.1.2",
     "openblock-link": "^0.2.0-prerelease.20221129121549",
@@ -84,7 +80,6 @@
     "nets": "^3.2.0",
     "node-abort-controller": "^3.0.1",
     "node-fetch": "^3.2.1",
-    "openblock-gui": "github:openblockcc/openblock-gui#openblock-desktop-v2.4.1",
     "openblock-l10n": "^3.10.20221129143535",
     "openblock-parse-release-message": "0.0.4",
     "os-locale": "^5.0.0",
@@ -95,6 +90,7 @@
     "redux": "3.7.2",
     "rimraf": "^3.0.2",
     "sudo-prompt": "^9.2.1",
+    "suyuan-gui": "github:yang1666204/suyuan-gui#main",
     "uuid": "^8.3.2",
     "webpack": "^4.43.0"
   }

@@ -327,7 +327,7 @@ const createMainWindow = () => {
     });
     const webContents = window.webContents;
 
-    const update = new Updater(webContents, desktopLink.resourceServer);
+    // const update = new Updater(webContents, desktopLink.resourceServer);
     remote.initialize();
     remote.enable(webContents);
 
@@ -447,29 +447,30 @@ const createMainWindow = () => {
 
         webContents.send('setPlatform', process.platform);
 
-        update.checkUpdateAtStartup();
+        // update.checkUpdateAtStartup();
     });
 
     ipcMain.on('reqeustCheckUpdate', () => {
-        update.reqeustCheckUpdate();
+        // update.reqeustCheckUpdate();
     });
 
     ipcMain.on('reqeustUpdate', () => {
-        update.reqeustUpdate()
-            .then(() => {
-                setTimeout(() => {
-                    console.log(`INFO: App will restart after 3 seconds`);
-                    app.relaunch();
-                    app.exit();
-                }, 1000 * 3);
-            })
-            .catch(err => {
-                console.error(`ERR!: update failed: ${err}`);
-            });
+
+        // update.reqeustUpdate()
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             console.log(`INFO: App will restart after 3 seconds`);
+        //             app.relaunch();
+        //             app.exit();
+        //         }, 1000 * 3);
+        //     })
+        //     .catch(err => {
+        //         console.error(`ERR!: update failed: ${err}`);
+        //     });
     });
 
     ipcMain.on('abortUpdate', () => {
-        update.abortUpdate();
+        // update.abortUpdate();
     });
 
     return window;
@@ -553,8 +554,7 @@ app.on('ready', () => {
     _windows.loading.once('show', () => {
         desktopLink.updateCahce();
         desktopLink.start()
-            .then(() => {
-                _windows.main = createMainWindow();
+              _windows.main = createMainWindow();
                 _windows.main.on('closed', () => {
                     delete _windows.main;
                 });
@@ -578,26 +578,51 @@ app.on('ready', () => {
                 _windows.main.show();
                 _windows.loading.close();
                 delete _windows.loading;
-            })
-            .catch(async e => {
-            // TODO: report error via telemetry
-                await dialog.showMessageBox(_windows.loading, {
-                    type: 'error',
-                    title: formatMessage({
-                        id: 'index.initialResourcesFailedTitle',
-                        default: 'Failed to initialize resources',
-                        description: 'Title for initialize resources failed'
-                    }),
-                    message: `${formatMessage({
-                        id: 'index.initializeResourcesFailed',
-                        default: 'Initialize resources failed',
-                        description: 'prompt for initialize resources failed'
-                    })}`,
-                    detail: e
-                });
+            // .then(() => {
+            //     _windows.main = createMainWindow();
+            //     _windows.main.on('closed', () => {
+            //         delete _windows.main;
+            //     });
+            //     _windows.about = createAboutWindow();
+            //     _windows.about.on('close', event => {
+            //         event.preventDefault();
+            //         _windows.about.hide();
+            //     });
+            //     _windows.license = createLicenseWindow();
+            //     _windows.license.on('close', event => {
+            //         event.preventDefault();
+            //         _windows.license.hide();
+            //     });
+            //     _windows.privacy = createPrivacyWindow();
+            //     _windows.privacy.on('close', event => {
+            //         event.preventDefault();
+            //         _windows.privacy.hide();
+            //     });
 
-                app.exit();
-            });
+            //     // after finsh load progress show main window and close loading window
+            //     _windows.main.show();
+            //     _windows.loading.close();
+            //     delete _windows.loading;
+            // })
+            // .catch(async e => {
+            // // TODO: report error via telemetry
+            //     await dialog.showMessageBox(_windows.loading, {
+            //         type: 'error',
+            //         title: formatMessage({
+            //             id: 'index.initialResourcesFailedTitle',
+            //             default: 'Failed to initialize resources',
+            //             description: 'Title for initialize resources failed'
+            //         }),
+            //         message: `${formatMessage({
+            //             id: 'index.initializeResourcesFailed',
+            //             default: 'Initialize resources failed',
+            //             description: 'prompt for initialize resources failed'
+            //         })}`,
+            //         detail: e
+            //     });
+
+            //     app.exit();
+            // });
     });
 });
 

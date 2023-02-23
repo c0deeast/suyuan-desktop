@@ -39,14 +39,14 @@ class OpenblockDesktopLink {
 
         this._storage = new ElectronStore();
         this._link = new OpenBlockLink(this.dataPath, path.join(this.appPath, 'tools'));
-        this._resourceServer = new OpenblockResourceServer(this.dataPath,
-            path.join(this.appPath, 'external-resources'),
-            app.getLocaleCountryCode());
+        // this._resourceServer = new OpenblockResourceServer(this.dataPath,
+        //     path.join(this.appPath, 'external-resources'),
+        //     app.getLocaleCountryCode());
     }
 
-    get resourceServer () {
-        return this._resourceServer;
-    }
+    // get resourceServer () {
+    //     return this._resourceServer;
+    // }
 
     installDriver (callback = null) {
         const driverPath = path.join(this.appPath, 'drivers');
@@ -100,16 +100,16 @@ class OpenblockDesktopLink {
         this._link.listen();
 
         // start resource server
-        return this._resourceServer.initializeResources()
-            .then(() => {
-                this._resourceServer.listen();
-                return Promise.resolve();
-            })
-            .catch(e => {
-                // Delet error cache dir and exit
-                this.clearCache(false);
-                return Promise.reject(e);
-            });
+        // return this._resourceServer.initializeResources()
+        //     .then(() => {
+        //         this._resourceServer.listen();
+        //         return Promise.resolve();
+        //     })
+        //     .catch(e => {
+        //         // Delet error cache dir and exit
+        //         this.clearCache(false);
+        //         return Promise.reject(e);
+        //     });
     }
 }
 

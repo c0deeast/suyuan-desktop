@@ -1,8 +1,8 @@
 import React from 'react';
 import {compose} from 'redux';
-import GUI from 'openblock-gui/src/index';
+import GUI from 'suyuan-gui/src/index';
 
-import AppStateHOC from 'openblock-gui/src/lib/app-state-hoc.jsx';
+import AppStateHOC from 'suyuan-gui/src/lib/app-state-hoc.jsx';
 
 import ScratchDesktopAppStateHOC from './ScratchDesktopAppStateHOC.jsx';
 import ScratchDesktopGUIHOC from './ScratchDesktopGUIHOC.jsx';
@@ -17,10 +17,13 @@ GUI.setAppElement(appTarget);
 // note that redux's 'compose' function is just being used as a general utility to make
 // the hierarchy of HOC constructor calls clearer here; it has nothing to do with redux's
 // ability to compose reducers.
+
 const WrappedGui = compose(
     ScratchDesktopAppStateHOC,
     AppStateHOC,
     ScratchDesktopGUIHOC
 )(GUI);
+
+
 
 export default <WrappedGui />;

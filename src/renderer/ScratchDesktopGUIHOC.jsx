@@ -199,14 +199,14 @@ const ScratchDesktopGUIHOC = function (WrappedComponent) {
                         />),
                         onClick: () => showPrivacyPolicy()
                     },
-                    {
-                        title: (<FormattedMessage
-                            defaultMessage="Data settings"
-                            description="Menu bar item for data settings"
-                            id="gui.menuBar.dataSettings"
-                        />),
-                        onClick: () => this.props.onTelemetrySettingsClicked()
-                    }
+                    // {
+                    //     title: (<FormattedMessage
+                    //         defaultMessage="Data settings"
+                    //         description="Menu bar item for data settings"
+                    //         id="gui.menuBar.dataSettings"
+                    //     />),
+                    //     onClick: () => this.props.onTelemetrySettingsClicked()
+                    // }
                 ]}
                 onClickLogo={this.handleClickLogo}
                 onClickCheckUpdate={this.handleClickCheckUpdate}

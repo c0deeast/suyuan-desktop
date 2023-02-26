@@ -4,18 +4,18 @@ directories:
 extraFiles: ['LICENSE', 'LICENSE.ScratchFoundation', 'TRADEMARK', "tools", "external-resources", 'firmwares', "drivers"]
 
 appId: openblock.cc.openblock-desktop
-productName: "OpenBlockDesktop"
+productName: "溯元机械臂"
 publish:
   - provider: github
   - provider: spaces
-    name: openblock
+    name: 溯元机械臂
     path: desktop
     region: sgp1
-artifactName: "OpenBlock-Desktop_v${version}_${os}_${arch}.${ext}"
+artifactName: "溯元机械臂_v${version}_${os}_${arch}.${ext}"
 
 fileAssociations:
   ext: ob
-  name: OpenBlock project file
+  name: 溯元机械臂
   role: Editor
   icon: buildResources/OpenBlockFile.ico
 
@@ -35,7 +35,7 @@ mac:
     - dmg
     # - mas
 dmg:
-  title: "OpenBlock-Desktop_${version}"
+  title: "溯元科技臂_${version}"
 # mas:
 #   category: public.app-category.education
 #   entitlements: buildResources/entitlements.mas.plist
@@ -47,7 +47,7 @@ dmg:
 #   provisioningProfile: mas-dev.provisionprofile
 
 win:
-  icon: buildResources/OpenBlockDesktop.ico
+  icon: buildResources/SuYuan.ico
   target:
     # - appx
     - nsis
@@ -66,7 +66,7 @@ linux:
   icon: buildResources/linux
   desktop:
     - Encoding: UTF-8
-    - Name: OpenBlockDesktop
+    - Name: 溯元科技臂
     - Icon: openblock-desktop
     - Type: Application
     - Terminal: false

@@ -3,7 +3,7 @@ directories:
   output: dist
 extraFiles: ['LICENSE', 'LICENSE.ScratchFoundation', 'TRADEMARK', "tools", "external-resources", 'firmwares', "drivers"]
 
-appId: openblock.cc.openblock-desktop
+appId: suyuan
 productName: "溯元机械臂"
 publish:
   - provider: github
@@ -17,7 +17,7 @@ fileAssociations:
   ext: ob
   name: 溯元机械臂
   role: Editor
-  icon: buildResources/OpenBlockFile.ico
+  icon: buildResources/SuYuan.ico
 
 mac:
   category: public.app-category.education
@@ -29,7 +29,7 @@ mac:
         This app requires microphone access when recording sounds or detecting loudness.
   gatekeeperAssess: true
   hardenedRuntime: true
-  icon: buildResources/OpenBlockDesktop.icns
+  icon: buildResources/SuYuan.ico
   provisioningProfile: embedded.provisionprofile
   target:
     - dmg

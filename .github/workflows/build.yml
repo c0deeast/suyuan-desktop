@@ -1,8 +1,8 @@
 name: Build Test App
 
-on:
+on: #推送到main分支会触发该工作流
   push:
-    branches: [ main ]
+    branches: [ main ]  
     paths-ignore:
       - 'README.md'
       - 'CHANGE.md'

@@ -1,7 +1,7 @@
-name: Build and release
+name: Build and release #工作流的名称
 
-on:
-  push:
+on:   #工作流的触发器
+  push: #推送到tags下对应的分支就会触发
     tags:
       - 'v*'
     paths-ignore:
@@ -13,6 +13,7 @@ on:
 jobs:
   create-release:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v2
 

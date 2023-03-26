@@ -26,7 +26,7 @@ jobs:
 
       - name: Build Dist
         env:
-          GA_ID: ${{ secrets.GA_ID }}
+          TOKEN_SUYUAN: ${{ secrets.TOKEN_SUYUAN }}
           NODE_ENV: production
           NODE_OPTIONS: --max_old_space_size=4096
         run: npm run dist

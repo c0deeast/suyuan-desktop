@@ -5,6 +5,7 @@
   "author": "Openblock.cc Team <contact@openblock.cc> (http://www.openblock.cc/)",
   "version": "2.4.1",
   "license": "MIT",
+  "homepage": "https://yang1666204.github.io/github-actions-demo",
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
     "clean": "rimraf ./dist ./static ./external-resources ./tools ./translations ./firmwares ./drivers",

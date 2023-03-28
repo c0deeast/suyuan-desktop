@@ -32,7 +32,7 @@ jobs:
         run: npm run dist
 
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: 溯元机械臂.exe
           path: dist/溯元机械臂*.exe
@@ -90,6 +90,6 @@ jobs:
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: SuYuan-Desktop.deb
-          path: dist/SuYuan-Desktop*.deb
+          name: 溯元机械臂.deb
+          path: dist/溯元机械臂*.deb
           retention-days: 1

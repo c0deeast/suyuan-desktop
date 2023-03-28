@@ -34,8 +34,8 @@ jobs:
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: SuYuan-Desktop.exe
-          path: dist/SuYuan-Desktop*.exe
+          name: 溯元机械臂.exe
+          path: dist/溯元机械臂*.exe
           retention-days: 1
 
   # build-mac:
